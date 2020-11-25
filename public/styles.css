@@ -1,211 +1,66 @@
-@import 'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-:root{
-    --color-green : #50fa7b;
-    --color-rocket : #7159c1;
+:root {
+    --primay-color: #7159c1
 }
-
 
 * {
     margin: 0;
     padding: 0;
-    border: 0;
+    border: none;
 }
 
 body {
-    background: #282a36;
-    color: #ffffff;
+    font-family: 'Roboto', sans-serif; 
+    background-color: var(--primay-color)
 }
 
 header {
+    background-color: #fff;
+    width: 100%;
     padding: 32px;
-    border: 1px solid #333;
-    background: rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .links {
-    text-align: center;
+    font-size: 22px;
+}
+
+.links a + a {
+    margin-left: 32px; 
 }
 
 .links a {
-    color: white;
-    font-size: 18px;
-    line-height: 28px;
-    margin: 0 16px;
-    padding-bottom: 3px;
-    text-decoration: none;
-    font-family: 'Source Sans Pro', sans-serif
+    text-decoration: none;  
+    color: #777;
+    position: relative;
+}
+
+.links a.active{
+    font-weight: bold;
+    color: var(--primay-color);
 }
 
 .links a:hover {
-    color:var(--color-green);
-    transition: color 0.5s;
+  color: var(--primay-color);
 }
 
-#wrapper {
-    text-align: center;
-    padding: 32px;
-    font-family: 'Source Sans Pro', sans-seri
-}
-
-#wrapper img {
-    border-radius: 50%;
-    border: 5px solid var(--color-green);
-    margin-bottom: 32px;
-    height: 150px;
-}
-
-#wrapper h1 {
-    font-size: 42px;
-    line-height: 52px;
-    font-weight: bold;
-  
-}
-
-#wrapper h2 {
-    font-size: 24px;
-    line-height: 34px;
-    font-weight: normal;
-    margin-top: 8px;
-    opacity: 0.8;
-}
-
-#wrapper p {
-    max-width: 500px;
-    margin: 32px auto;
-    font-size: 24px;
-    line-height: 34px;
-}
-
-#wrapper p a {
-  color: var(--color-green);
-}
-
-#links-footer a {
-    border-bottom: 1px solid var(--color-green);
-}
-
-/* ==== CARDS */
-
-.cards {
-    max-width: 800px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-}
-
-.card {
-    background-color: var(--color-rocket);
-    display: grid;
-    cursor: pointer;
-}
-
-.card_image-container img {
-    width: 100%;
-}
-
-.card__content, .card__info {
-    padding: 24px;
-}
-
-.card__info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-}
-
-.card__price {
-    background-color: var(--color-rocket);
-    filter: brightness(90%);
-    padding: 5px 20px;
-    border-radius: 20px;
-    text-align: center;
-}
-
-/* === MODAL === */
-
-.modal-overlay {
-    background-color: rgba(0, 0, 0, 0, 0.7);
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.modal {
-    background-color: white;
-    width: 90%;
-    height: 90%;
-    margin: 5vh;
-}
-
-.modal .close-modal {
-    color: black;
-    display: flex;
-    justify-content: flex-end;
-    padding: 8px 8px 0 0;
-    cursor: pointer;
-}
-
-
-/* === MODAL.ACTIVE === */
-
-.modal-overlay.active {
-    opacity:1 ;
-    visibility: visible;
-}
-
-.modal-content {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-iframe {
-    width: 100%;
-    height: 90%;
+.links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--primay-color);
     position: absolute;
-    top: 5%;
+    left: 0;
+    bottom: -4px;
 }
 
-/* === FEATURED === */
-
-.featured-wrapper.card_image-container {
-    position: relative;
-}
-
-.featured {
-  position: absolute;
-  background-color: #f7d05f;
-  color: #111;
-  padding: 2px 8px;
-  right: 5px;
-  border-radius: 16px;
-  top: -10px;
-}
-
-/* === Video Page === */
-.video {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.card_video-container {
-    position: relative;
+.links a:hover::after {
     width: 100%;
-    padding-top: 62.5%;   
+    transition:  all 700ms ease-in-out;
 }
 
-.card_video-container iframe {
-    width: 100%;
-    height:100%;
-    position: absolute;
-    top: 0;
-}
 
-.video .card {
-    cursor: initial;
-}
+
+
