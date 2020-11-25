@@ -1,2 +1,2 @@
 # gym-flow
-Gym app to help my padawan to lean about git.
+Gym app to help my padawan to learn about git.
